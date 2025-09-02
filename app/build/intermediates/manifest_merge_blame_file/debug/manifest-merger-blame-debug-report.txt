@@ -1,0 +1,111 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.webrtc_p2p"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="34" />
+10
+11    <!-- 音频权限 -->
+12    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+12-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:6:5-71
+12-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:6:22-68
+13    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+13-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:7:5-80
+13-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:7:22-77
+14
+15    <!-- 网络权限 -->
+16    <uses-permission android:name="android.permission.INTERNET" />
+16-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:10:5-67
+16-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:10:22-64
+17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+17-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:11:5-79
+17-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:11:22-76
+18
+19    <!-- 麦克风权限 -->
+20    <uses-feature
+20-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:14:5-88
+21        android:name="android.hardware.microphone"
+21-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:14:19-61
+22        android:required="true" />
+22-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:14:62-85
+23
+24    <permission
+24-->[androidx.core:core:1.9.0] /Users/at/.gradle/caches/transforms-3/75919e89ab9acfe92b320b18b5eba894/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+25        android:name="com.example.webrtc_p2p.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+25-->[androidx.core:core:1.9.0] /Users/at/.gradle/caches/transforms-3/75919e89ab9acfe92b320b18b5eba894/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+26        android:protectionLevel="signature" />
+26-->[androidx.core:core:1.9.0] /Users/at/.gradle/caches/transforms-3/75919e89ab9acfe92b320b18b5eba894/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+27
+28    <uses-permission android:name="com.example.webrtc_p2p.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+28-->[androidx.core:core:1.9.0] /Users/at/.gradle/caches/transforms-3/75919e89ab9acfe92b320b18b5eba894/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+28-->[androidx.core:core:1.9.0] /Users/at/.gradle/caches/transforms-3/75919e89ab9acfe92b320b18b5eba894/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+29
+30    <application
+30-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:16:5-37:19
+31        android:allowBackup="true"
+31-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:17:9-35
+32        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+32-->[androidx.core:core:1.9.0] /Users/at/.gradle/caches/transforms-3/75919e89ab9acfe92b320b18b5eba894/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+33        android:dataExtractionRules="@xml/data_extraction_rules"
+33-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:18:9-65
+34        android:debuggable="true"
+35        android:extractNativeLibs="false"
+36        android:fullBackupContent="@xml/backup_rules"
+36-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:19:9-54
+37        android:icon="@mipmap/ic_launcher"
+37-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:20:9-43
+38        android:label="@string/app_name"
+38-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:21:9-41
+39        android:roundIcon="@mipmap/ic_launcher_round"
+39-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:22:9-54
+40        android:supportsRtl="true"
+40-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:23:9-35
+41        android:theme="@style/Theme.WebRTC_P2P" >
+41-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:24:9-48
+42        <activity
+42-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:27:9-35:20
+43            android:name="com.example.webrtc_p2p.MainActivity"
+43-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:28:13-41
+44            android:exported="true"
+44-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:29:13-36
+45            android:theme="@style/Theme.WebRTC_P2P" >
+45-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:30:13-52
+46            <intent-filter>
+46-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:31:13-34:29
+47                <action android:name="android.intent.action.MAIN" />
+47-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:32:17-69
+47-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:32:25-66
+48
+49                <category android:name="android.intent.category.LAUNCHER" />
+49-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:33:17-77
+49-->/Users/at/项目s/22.眼镜/WebRTC_P2P/app/src/main/AndroidManifest.xml:33:27-74
+50            </intent-filter>
+51        </activity>
+52
+53        <provider
+53-->[androidx.emoji2:emoji2:1.2.0] /Users/at/.gradle/caches/transforms-3/4381fccdde393d19d04161b40313d198/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+54            android:name="androidx.startup.InitializationProvider"
+54-->[androidx.emoji2:emoji2:1.2.0] /Users/at/.gradle/caches/transforms-3/4381fccdde393d19d04161b40313d198/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+55            android:authorities="com.example.webrtc_p2p.androidx-startup"
+55-->[androidx.emoji2:emoji2:1.2.0] /Users/at/.gradle/caches/transforms-3/4381fccdde393d19d04161b40313d198/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+56            android:exported="false" >
+56-->[androidx.emoji2:emoji2:1.2.0] /Users/at/.gradle/caches/transforms-3/4381fccdde393d19d04161b40313d198/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+57            <meta-data
+57-->[androidx.emoji2:emoji2:1.2.0] /Users/at/.gradle/caches/transforms-3/4381fccdde393d19d04161b40313d198/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+58                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+58-->[androidx.emoji2:emoji2:1.2.0] /Users/at/.gradle/caches/transforms-3/4381fccdde393d19d04161b40313d198/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+59                android:value="androidx.startup" />
+59-->[androidx.emoji2:emoji2:1.2.0] /Users/at/.gradle/caches/transforms-3/4381fccdde393d19d04161b40313d198/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+60            <meta-data
+60-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/at/.gradle/caches/transforms-3/985a628a1f5b5ddc7202e86f547851a5/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:31:13-33:52
+61                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+61-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/at/.gradle/caches/transforms-3/985a628a1f5b5ddc7202e86f547851a5/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:32:17-78
+62                android:value="androidx.startup" />
+62-->[androidx.lifecycle:lifecycle-process:2.4.1] /Users/at/.gradle/caches/transforms-3/985a628a1f5b5ddc7202e86f547851a5/transformed/jetified-lifecycle-process-2.4.1/AndroidManifest.xml:33:17-49
+63        </provider>
+64    </application>
+65
+66</manifest>

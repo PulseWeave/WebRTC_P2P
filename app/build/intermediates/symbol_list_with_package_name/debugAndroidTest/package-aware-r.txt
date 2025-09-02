@@ -1,0 +1,3 @@
+com.example.webrtc_p2p.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

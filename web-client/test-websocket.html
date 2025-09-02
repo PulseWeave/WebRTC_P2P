@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket 连接测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .status {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .connected { background: #d4edda; color: #155724; }
+        .disconnected { background: #f8d7da; color: #721c24; }
+        .connecting { background: #fff3cd; color: #856404; }
+        .log {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            height: 300px;
+            overflow-y: auto;
+            font-family: monospace;
+            font-size: 12px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover { background: #0056b3; }
+        button:disabled { background: #6c757d; }
+    </style>
+</head>
+<body>
+    <h1>🔌 WebSocket 连接测试</h1>
+    
+    <div>
+        <label>服务器IP: <input type="text" id="serverIp" value="192.168.0.105"></label>
+        <label>端口: <input type="number" id="serverPort" value="8081"></label>
+        <button onclick="testConnection()">测试连接</button>
+        <button onclick="disconnect()">断开连接</button>
+    </div>
+    
+    <div id="status" class="status disconnected">未连接</div>
+    
+    <h3>连接日志:</h3>
+    <div id="log" class="log"></div>
+
+    <script>
+        let ws = null;
+        
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            const timestamp = new Date().toLocaleTimeString();
+            logDiv.innerHTML += `[${timestamp}] ${message}\n`;
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+        
+        function updateStatus(status, text) {
+            const statusDiv = document.getElementById('status');
+            statusDiv.className = `status ${status}`;
+            statusDiv.textContent = text;
+        }
+        
+        function testConnection() {
+            const serverIp = document.getElementById('serverIp').value;
+            const serverPort = document.getElementById('serverPort').value;
+            const wsUrl = `ws://${serverIp}:${serverPort}`;
+            
+            log(`正在连接到: ${wsUrl}`);
+            updateStatus('connecting', '连接中...');
+            
+            try {
+                ws = new WebSocket(wsUrl);
+                
+                ws.onopen = function() {
+                    log('✅ WebSocket连接成功!');
+                    updateStatus('connected', '已连接');
+                    
+                    // 发送测试消息
+                    ws.send(JSON.stringify({
+                        type: 'test',
+                        message: 'Hello from test client'
+                    }));
+                };
+                
+                ws.onmessage = function(event) {
+                    log(`📨 收到消息: ${event.data}`);
+                };
+                
+                ws.onclose = function(event) {
+                    log(`❌ 连接已关闭: ${event.code} - ${event.reason}`);
+                    updateStatus('disconnected', '连接已断开');
+                    ws = null;
+                };
+                
+                ws.onerror = function(error) {
+                    log(`❌ 连接错误: ${error}`);
+                    updateStatus('disconnected', '连接错误');
+                };
+                
+            } catch (error) {
+                log(`❌ 创建WebSocket失败: ${error.message}`);
+                updateStatus('disconnected', '连接失败');
+            }
+        }
+        
+        function disconnect() {
+            if (ws) {
+                ws.close();
+                ws = null;
+                log('主动断开连接');
+            }
+        }
+        
+        // 页面加载时显示当前IP
+        window.onload = function() {
+            log('页面已加载，准备测试WebSocket连接');
+            log(`当前测试地址: ws://192.168.0.105:8081`);
+        };
+    </script>
+</body>
+</html> 

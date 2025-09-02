@@ -1,0 +1,33 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color ic_launcher_background
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+drawable ic_launcher_foreground
+id btn_call
+id btn_connect
+id et_ip
+id et_port
+id ip_port_layout
+id tv_connection_status
+id tv_log
+id tv_status
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string connected
+string connecting
+string disconnected
+string grant_permission
+string permission_required
+string start_call
+string stop_call
+style Theme.WebRTC_P2P
+xml backup_rules
+xml data_extraction_rules
